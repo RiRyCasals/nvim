@@ -23,14 +23,14 @@ set scrolloff=5             "スクロール時の上下の視界を確保
 " indent, tab
 set tabstop=4                                       "タブ入力時の文字数
 autocmd BufNewFile,BufRead *.nim set tabstop=2      ".nim のときのタブ文字数
-autocmd BufNewFile,BufRead *.dart set tabstop=2      ".dart のときのタブ文字数
+autocmd BufNewFile,BufRead *.dart set tabstop=2     ".dart のときのタブ文字数
 set shiftwidth=4                                    "シフト時の文字数
 autocmd BufNewFile,BufRead *.nim set shiftwidth=2   ".nim のときのシフト数
-autocmd BufNewFile,BufRead *.dart set shiftwidth=2   ".dart のときのシフト数
+autocmd BufNewFile,BufRead *.dart set shiftwidth=2  ".dart のときのシフト数
 set expandtab                                       "タブにスペースを使用
 set smarttab                                        "行頭でタブ入力時にインデントを挿入
-set smartindent                                     "ブロックに応じて自動でインデントを挿入する
-"set autoindent                                     "改行時に自動でインデントを挿入する
+"set smartindent                                     "ブロックに応じて自動でインデントを挿入する
+"set autoindent                                      "改行時に自動でインデントを挿入する
 
 " complement
 set wildmode=list:longest           "最長の共通部分まで補完し，リストを表示
@@ -65,25 +65,30 @@ inoremap <expr><C-k> pumvisible() ? "<Up>" : "<C-k>"
 "補完候補表示中にタブで確定
 inoremap <expr><TAB>  pumvisible() ? "<C-y>" : "<TAB>"
 
-inoremap '<ESC> '
+inoremap '<SPACE> '
 inoremap ' ''<LEFT>
+inoremap '' ''
 
-inoremap "<ESC> "
+inoremap "<SPACE> "
 inoremap " ""<LEFT>
+inoremap "" ""
 
-inoremap [<ESC> [
+inoremap [<SPACE> [
 inoremap [ []<LEFT>
 inoremap [<C-j> []<LEFT><CR><ESC><S-o><TAB>
+inoremap [] []
 
-inoremap (<ESC> (
+inoremap (<SPACE> (
 inoremap ( ()<LEFT>
 inoremap (<C-j> ()<LEFT><CR><ESC><S-o><TAB>
+inoremap () ()
 
-inoremap {<ESC> {
+inoremap {<SPACE> {
 inoremap { {}<LEFT>
 inoremap {<C-j> {}<LEFT><CR><ESC><S-o><TAB>
+inoremap {} {}
 
-inoremap <C-l> <DELETE>
+inoremap <C-d> <DELETE>
 
 nnoremap <C-e> :CocCommand explorer<CR>
 
@@ -91,8 +96,9 @@ nnoremap <C-e> :CocCommand explorer<CR>
 " vim plug
 call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
-    Plug 'lukas-reineke/indent-blankline.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'honza/vim-snippets'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'alaviss/nim.nvim'
 call plug#end()

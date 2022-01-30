@@ -65,28 +65,28 @@ inoremap <expr><C-k> pumvisible() ? "<Up>" : "<C-k>"
 "補完候補表示中にタブで確定
 inoremap <expr><TAB>  pumvisible() ? "<C-y>" : "<TAB>"
 
-inoremap '<SPACE> '
-inoremap ' ''<LEFT>
 inoremap '' ''
+inoremap ' ''<LEFT>
+inoremap '<ESC> '<ESC>
 
-inoremap "<SPACE> "
-inoremap " ""<LEFT>
 inoremap "" ""
+inoremap " ""<LEFT>
+inoremap "<ESC> "<ESC>
 
-inoremap [<SPACE> [
-inoremap [ []<LEFT>
-inoremap [<C-j> []<LEFT><CR><ESC><S-o><TAB>
 inoremap [] []
+inoremap [ []<LEFT>
+inoremap [<ESC> [<ESC>
+inoremap [<C-j> []<LEFT><CR><ESC><S-o>
 
-inoremap (<SPACE> (
-inoremap ( ()<LEFT>
-inoremap (<C-j> ()<LEFT><CR><ESC><S-o><TAB>
 inoremap () ()
+inoremap ( ()<LEFT>
+inoremap (<ESC> (<ESC>
+inoremap (<C-j> ()<LEFT><CR><ESC><S-o>
 
-inoremap {<SPACE> {
-inoremap { {}<LEFT>
-inoremap {<C-j> {}<LEFT><CR><ESC><S-o><TAB>
 inoremap {} {}
+inoremap { {}<LEFT>
+inoremap {<ESC> {<ESC>
+inoremap {<C-j> {}<LEFT><CR><ESC><S-o>
 
 inoremap <C-d> <DELETE>
 
@@ -100,5 +100,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'honza/vim-snippets'
     Plug 'prabirshrestha/vim-lsp'
-    Plug 'alaviss/nim.nvim'
 call plug#end()

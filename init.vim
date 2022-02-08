@@ -76,17 +76,21 @@ inoremap "<ESC> "<ESC>
 inoremap [] []
 inoremap [ []<LEFT>
 inoremap [<ESC> [<ESC>
-inoremap [<C-j> []<LEFT><CR><ESC><S-o>
+inoremap [<C-j> []<LEFT><CR><ESC><S-o><TAB>
 
 inoremap () ()
 inoremap ( ()<LEFT>
 inoremap (<ESC> (<ESC>
-inoremap (<C-j> ()<LEFT><CR><ESC><S-o>
+inoremap (<C-j> ()<LEFT><CR><ESC><S-o><TAB>
 
 inoremap {} {}
 inoremap { {}<LEFT>
 inoremap {<ESC> {<ESC>
-inoremap {<C-j> {}<LEFT><CR><ESC><S-o>
+inoremap {<C-j> {}<LEFT><CR><ESC><S-o><TAB>
+
+autocmd BufNewFile,BufRead *.nim inoremap #[ #[]#<LEFT><LEFT>
+autocmd BufNewFile,BufRead *.nim inoremap #[<ESC> #[<ESC>
+autocmd BufNewFile,BufRead *.nim inoremap #[<C-j> #[]#<LEFT><LEFT><CR><ESC><S-o><TAB>
 
 inoremap <C-d> <DELETE>
 
@@ -99,5 +103,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'honza/vim-snippets'
-    Plug 'prabirshrestha/vim-lsp'
+    "Plug 'prabirshrestha/vim-lsp'
+    Plug 'alaviss/nim.nvim'
 call plug#end()

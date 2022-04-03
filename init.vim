@@ -88,6 +88,7 @@ inoremap { {}<LEFT>
 inoremap {<ESC> {<ESC>
 inoremap {<C-j> {}<LEFT><CR><ESC><S-o><TAB>
 
+autocmd BufNewFile,BufRead *.html inoremap {% {%  %}<LEFT><LEFT><LEFT>
 autocmd BufNewFile,BufRead *.nim inoremap #[ #[]#<LEFT><LEFT>
 autocmd BufNewFile,BufRead *.nim inoremap #[<ESC> #[<ESC>
 autocmd BufNewFile,BufRead *.nim inoremap #[<C-j> #[]#<LEFT><LEFT><CR><ESC><S-o><TAB>

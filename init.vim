@@ -76,22 +76,22 @@ inoremap "<ESC> "<ESC>
 inoremap [] []
 inoremap [ []<LEFT>
 inoremap [<ESC> [<ESC>
-inoremap [<C-j> []<LEFT><CR><ESC><S-o><TAB>
+inoremap [<C-j> []<LEFT><CR><ESC><S-o>
 
 inoremap () ()
 inoremap ( ()<LEFT>
 inoremap (<ESC> (<ESC>
-inoremap (<C-j> ()<LEFT><CR><ESC><S-o><TAB>
+inoremap (<C-j> ()<LEFT><CR><ESC><S-o>
 
 inoremap {} {}
 inoremap { {}<LEFT>
 inoremap {<ESC> {<ESC>
-inoremap {<C-j> {}<LEFT><CR><ESC><S-o><TAB>
+inoremap {<C-j> {}<LEFT><CR><ESC><S-o>
 
 autocmd BufNewFile,BufRead *.html inoremap {% {%  %}<LEFT><LEFT><LEFT>
 autocmd BufNewFile,BufRead *.nim inoremap #[ #[]#<LEFT><LEFT>
 autocmd BufNewFile,BufRead *.nim inoremap #[<ESC> #[<ESC>
-autocmd BufNewFile,BufRead *.nim inoremap #[<C-j> #[]#<LEFT><LEFT><CR><ESC><S-o><TAB>
+autocmd BufNewFile,BufRead *.nim inoremap #[<C-j> #[]#<LEFT><LEFT><CR><ESC><S-o>
 
 inoremap <C-d> <DELETE>
 

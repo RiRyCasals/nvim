@@ -89,6 +89,8 @@ inoremap {<ESC> {<ESC>
 inoremap {<C-j> {}<LEFT><CR><ESC><S-o>
 
 autocmd BufNewFile,BufRead *.html inoremap {% {%  %}<LEFT><LEFT><LEFT>
+autocmd BufNewFile,BufRead *.py inoremap ''' ''''''<ESC>2hi
+autocmd BufNewFile,BufRead *.py inoremap '''<C-j> '''<CR>'''<ESC><S-o>
 autocmd BufNewFile,BufRead *.nim inoremap #[ #[]#<LEFT><LEFT>
 autocmd BufNewFile,BufRead *.nim inoremap #[<ESC> #[<ESC>
 autocmd BufNewFile,BufRead *.nim inoremap #[<C-j> #[]#<LEFT><LEFT><CR><ESC><S-o>

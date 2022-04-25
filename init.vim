@@ -95,12 +95,12 @@ autocmd BufNewFile,BufRead *.nim inoremap #[ #[]#<LEFT><LEFT>
 autocmd BufNewFile,BufRead *.nim inoremap #[<ESC> #[<ESC>
 autocmd BufNewFile,BufRead *.nim inoremap #[<C-j> #[]#<LEFT><LEFT><CR><ESC><S-o>
 
+inoremap <C-c> <ESC>
 inoremap <C-d> <DELETE>
 
 nnoremap <C-e> :CocCommand explorer<CR>
 
 "normalモードに戻ったときに日本語入力が on になっていれば off にする
-inoremap <C-c> <ESC>  "control+c で Escape した場合でも動作させたいため
 if has('mac')
   let g:imeoff = 'osascript -e "tell application \"System Events\" to key code 102"'
   augroup MyIMEGroup

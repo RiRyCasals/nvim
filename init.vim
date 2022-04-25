@@ -99,6 +99,16 @@ inoremap <C-d> <DELETE>
 
 nnoremap <C-e> :CocCommand explorer<CR>
 
+"normalモードに戻ったときに日本語入力が on になっていれば off にする
+inoremap <C-c> <ESC>  "control+c で Escape した場合でも動作させたいため
+if has('mac')
+  let g:imeoff = 'osascript -e "tell application \"System Events\" to key code 102"'
+  augroup MyIMEGroup
+    autocmd!
+    autocmd InsertLeave * :call system(g:imeoff)
+  augroup END
+endif
+
 
 " vim plug
 call plug#begin('~/.config/nvim/autoload/plugged')
